@@ -14,20 +14,37 @@ func main() {
 	fmt.Println(c, d)
 
 	//2. accepting a variable number of arguments (Variadic functions)
-	sum := func (nums ...int) {
-		 //nums becomes []int 
-		fmt.Print(nums," ")
+	sum := func(nums ...int) {
+		//nums becomes []int
+		fmt.Print(nums, " ")
 		total := 0
 		for _, num := range nums {
 			total += num
 		}
 		fmt.Println(total)
 	}
-	
-		sum(1,2)
-		sum(1,2,3)
-		numslice := []int{1,2,3,4}
-		sum(numslice...)
-	//3. ability to form closures
 
+	sum(1, 2)
+	sum(1, 2, 3)
+	numslice := []int{1, 2, 3, 4}
+	sum(numslice...)
+	//3. ability to form closures (anonymous functions)
+	// anonymous functions are useful when you want to define a function inline without having to name it.
+	intSeq :=func() func() int {
+		i := 0
+		return func() int {
+			i++
+			return i
+			
+		}
+	}
+	//
+	nextInt := intSeq()
+	fmt.Println(nextInt())
+	fmt.Println(nextInt())
+	fmt.Println(nextInt())
+	fmt.Println(nextInt())
+
+	newInts := intSeq()
+    fmt.Println(newInts())
 }
