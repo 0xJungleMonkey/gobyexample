@@ -46,5 +46,10 @@ Program is executable, to finish certain task, not meant for reuse. We will run 
 Library is polyphizmed, we wants to reuse it.
 
 
+## GOROOT
 
+If you use GOPATH, you need to turn off GOROOT:
+```bash
+go env -w GO111MODULE=off
+```
 
