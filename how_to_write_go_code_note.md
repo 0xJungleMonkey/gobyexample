@@ -15,20 +15,36 @@ We need to run it in the module directory.  It will build and generate a file in
 
 ```bash
 ~$ go install
+(or
+~$ go install github.com/0xJungleMonkey/meow)
 ~$ meow
 Meow, Meow, Meow
 ```
 
 ## Go build
 
-Go build only generate the executable in the same folder. And we need to run it with "./file".
+Go build only generate the executable in the same folder.
+Go build can test the package compiles, will not compile if there is any error.
+And we need to run it with "./file".
 
 ```bash
 ~$ go build
+(or 
+~$ go build github.com/0xJungleMonkey/meow)
 ~$ meow
 zsh: command not found: meow
 
 ~$ ./meow
 meow, meow, meow!
 ```
+
+
+## Program vs Library
+
+Program is executable, to finish certain task, not meant for reuse. We will run go install to make it a command executable. 
+
+Library is polyphizmed, we wants to reuse it.
+
+
+
 
